@@ -1,0 +1,45 @@
+---
+source: src/lib.rs
+expression: parsed
+---
+Track {
+    values: [
+        50.0,
+        100.0,
+    ],
+    precision: 3,
+    flag: TrackFlag(
+        0x0,
+    ),
+    movement: Some(
+        Movement {
+            name: "直線移動(時間制御)",
+            parameters: [],
+        },
+    ),
+    time_control_points: Some(
+        [
+            TimeControlPoint {
+                coordinate: (
+                    0.0,
+                    0.0,
+                ),
+                handle_offset: (
+                    0.25,
+                    1.0,
+                ),
+            },
+            TimeControlPoint {
+                coordinate: (
+                    1.0,
+                    1.0,
+                ),
+                handle_offset: (
+                    0.191176,
+                    1.0,
+                ),
+            },
+        ],
+    ),
+    reference: None,
+}

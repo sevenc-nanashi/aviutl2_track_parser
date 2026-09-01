@@ -1,0 +1,22 @@
+---
+source: src/lib.rs
+expression: parsed
+---
+Track {
+    values: [
+        50.0,
+        100.0,
+    ],
+    precision: 3,
+    flag: TrackFlag(
+        ACCELERATE | DECELERATE,
+    ),
+    movement: Some(
+        Movement {
+            name: "直線移動",
+            parameters: [],
+        },
+    ),
+    time_control_points: None,
+    reference: None,
+}

@@ -1,0 +1,16 @@
+---
+source: src/lib.rs
+expression: parsed
+---
+Track {
+    values: [
+        42.0,
+    ],
+    precision: 2,
+    flag: TrackFlag(
+        0x0,
+    ),
+    movement: None,
+    time_control_points: None,
+    reference: None,
+}

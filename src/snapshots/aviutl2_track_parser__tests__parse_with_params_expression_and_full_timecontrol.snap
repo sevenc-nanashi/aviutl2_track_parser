@@ -1,0 +1,67 @@
+---
+source: src/lib.rs
+expression: parsed
+---
+Track {
+    values: [
+        50.0,
+        100.0,
+    ],
+    precision: 3,
+    flag: TrackFlag(
+        REFERENCE,
+    ),
+    movement: Some(
+        Movement {
+            name: "コマ落ち時間制御@Basic_S",
+            parameters: [
+                0.0,
+                0.5,
+                1.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                360.0,
+                0.0,
+            ],
+        },
+    ),
+    time_control_points: Some(
+        [
+            TimeControlPoint {
+                coordinate: (
+                    0.0,
+                    0.0,
+                ),
+                handle_offset: (
+                    0.165441,
+                    0.411111,
+                ),
+            },
+            TimeControlPoint {
+                coordinate: (
+                    0.264706,
+                    0.366667,
+                ),
+                handle_offset: (
+                    0.2,
+                    0.0,
+                ),
+            },
+            TimeControlPoint {
+                coordinate: (
+                    1.0,
+                    1.0,
+                ),
+                handle_offset: (
+                    0.202206,
+                    0.516667,
+                ),
+            },
+        ],
+    ),
+    reference: Some(
+        "$",
+    ),
+}

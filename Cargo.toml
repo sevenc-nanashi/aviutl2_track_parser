@@ -1,0 +1,11 @@
+[package]
+name = "aviutl2_track_parser"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[dependencies]
+bitflags = "2.13.1"
+aviutl2 = ">=0.45.0"
+thiserror = "2.0.20"
+insta = "1.48.0"
