@@ -43,6 +43,10 @@ pub struct Track {
     pub precision: usize,
 
     /// フラグ。
+    ///
+    /// # Note
+    ///
+    /// シリアライズ時は参照式のフラグはこの値ではなく`reference`の有無で決定されます。
     pub flag: TrackFlag,
 
     /// 使っている移動スクリプト。
@@ -260,14 +264,16 @@ impl std::fmt::Display for Track {
             return f.write_str(&values);
         }
 
+        let mut flag = self.flag;
+        flag.set(TrackFlag::REFERENCE, self.reference.is_some());
+
         let movement_name = self
             .movement
             .as_ref()
             .map_or("移動無し", |movement| movement.name.as_str());
-        write!(f, "{values},{movement_name},{}", self.flag.bits())?;
+        write!(f, "{values},{movement_name},{}", flag.bits())?;
 
-        if self.flag.contains(TrackFlag::REFERENCE) {
-            let reference = self.reference.as_ref().ok_or(std::fmt::Error)?;
+        if let Some(reference) = &self.reference {
             write!(f, "|{reference}")?;
         }
 
